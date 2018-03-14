@@ -30,16 +30,16 @@ else
 
     echo "allowscp" >> /etc/rssh.conf
     echo "allowsftp" >> /etc/rssh.conf
-
-    # Copy authorized keys from ENV variable
-    IFS='#' read -ra ADDR <<< "$AUTHORIZEDKEYS"
-
-    for i in "${ADDR[@]}"; do
-        echo $i >> $AUTHORIZED_KEYS_FILE
-    done
-
-    unset IFS
 fi
+
+# Copy authorized keys from ENV variable
+IFS='#' read -ra ADDR <<< "$AUTHORIZEDKEYS"
+
+for i in "${ADDR[@]}"; do
+    echo $i >> $AUTHORIZED_KEYS_FILE
+done
+
+unset IFS
 
 # Run sshd on container start
 exec /usr/sbin/sshd -D -e

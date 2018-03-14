@@ -34,3 +34,12 @@ SFTP and SCP access are granted. To upload files without known_host check:
 ```Shell
 scp -P 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null afile datauser@localhost:newname
 ```
+
+
+Deploying as a Stack
+---
+Use the supplied __docker-compose.yaml__ as a template to deploy a standalone stack service. Authorized keys can be modified on the fly:
+
+```Shell
+docker service update --env-add AUTHORIZEDKEYS=whatever servicename
+```
