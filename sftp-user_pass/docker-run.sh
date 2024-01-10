@@ -6,5 +6,5 @@ docker run -ti --rm \
     -e USER=theuser \
     -e PASS=thepass \
     -e USER_UID=1500 \
-    -e USER_GID=1600 \
+    -e USER_GID=1500 \
     malkab/sftp-user:latest

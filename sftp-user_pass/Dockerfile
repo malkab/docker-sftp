@@ -2,8 +2,10 @@
 # and Martin Honermeyer (https://github.com/djmaze). All credits to them.
 
 FROM debian:stable
-LABEL "maintainer" "Juan Pedro Pérez <jp.perez.alcantara@gmail.com>"
+LABEL author="Juan Pedro Perez"
+LABEL email="jp.perez.alcantara@gmail.com"
 
+# Environment
 ENV USER share
 ENV PASS changeme
 ENV USER_UID 1000
@@ -17,7 +19,6 @@ RUN apt-get update && \
 ADD Assets/start.sh /usr/local/bin/start.sh
 ADD Assets/sshd_config /etc/ssh/sshd_config
 
-VOLUME /data
 EXPOSE 22
 
 ENTRYPOINT ["/bin/bash", "/usr/local/bin/start.sh"]
