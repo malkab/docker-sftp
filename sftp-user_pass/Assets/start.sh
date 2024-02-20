@@ -14,6 +14,8 @@ else
 
     ENC_PASS=$(perl -e 'print crypt($ARGV[0], "password")' ${PASS})
 
+    mkdir /data
+
     useradd -d /data -M -p ${ENC_PASS} -u ${USER_UID} -g ${USER_GID} -s /usr/lib/openssh/sftp-server ${USER}
 
     chown ${USER}:${USER} /data

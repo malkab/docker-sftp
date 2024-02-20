@@ -1,0 +1,18 @@
+# Set GIT home if the MLK_GIT_HOME env var exists
+# If not set, defaults to /home/git
+<% GITDIR=ENV["MLK_GIT_HOME"] %>
+<% if GITDIR=="" %>
+<% GITDIRF="/home/git" %>
+<% else %>
+<% GITDIRF=GITDIR %>
+<% end %>
+
+name: docker-sftp
+root: <%= GITDIRF %>/docker/docker-sftp
+
+
+windows:
+  - work: >
+      sleep 0.5 ;
+      clear ;
+      echo Do something interesting here today
