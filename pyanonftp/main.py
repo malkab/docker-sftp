@@ -17,6 +17,7 @@ def main():
     # Passive ports
     handler.passive_ports = range(40000, 40010)
     handler.permit_foreign_addresses = True
+    handler.timeout = 1200
 
     handler.banner = "pyanonftp FTP server ready."
 
