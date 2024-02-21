@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Install packages
 pip install pyftpdlib

@@ -15,7 +15,7 @@ def main():
     handler = FTPHandler
     handler.authorizer = authorizer
     # Passive ports
-    handler.passive_ports = range(40000, 40009)
+    handler.passive_ports = range(40000, 40010)
     handler.permit_foreign_addresses = True
 
     handler.banner = "pyanonftp FTP server ready."
